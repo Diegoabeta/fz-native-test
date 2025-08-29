@@ -10,6 +10,7 @@ export default {
         surface: "#CCE6E3",
         red: "#F00000",
         pink: "#FFD0D0",
+        white: "FFFFFF",
         "light-green": "#A2D033",
         "off-white": "#F9FBFB",
         "bg-green": "#EDF4D8",
