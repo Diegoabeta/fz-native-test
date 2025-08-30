@@ -1,5 +1,6 @@
 export const Colors = {
   primary: "#166D6B",
+  lightBlue: "#CCE6E3",
   lightGreen: "#A2D033",
   offWhite: "#F9FBFB",
   bgGreen: "#EDF4D8",
@@ -7,6 +8,8 @@ export const Colors = {
   surface: "#CCE6E3",
   grey1: "#707070",
   grey2: "#9DA6B2",
+  grey3: "#EFEFEF",
+  grey4: "#F5F5F5",
   red: "#F00000",
   pink: "#FFD0D0",
   white: "#FFFFFF",
