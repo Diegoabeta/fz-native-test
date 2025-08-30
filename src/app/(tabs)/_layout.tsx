@@ -4,7 +4,7 @@ import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import { Tabs } from "expo-router";
 import React from "react";
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 
 export default function TabsLayout() {
   return (
@@ -60,6 +60,9 @@ export default function TabsLayout() {
             >
               <FontAwesome6 name="plus" size={28} color={Colors.white} />
             </View>
+          ),
+          tabBarButton: (props: any) => (
+            <TouchableOpacity {...props} activeOpacity={1} />
           ),
         }}
       />
