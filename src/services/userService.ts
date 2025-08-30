@@ -16,6 +16,8 @@ export interface IUserData {
   picture?: string;
 }
 
+const USER_PATH = "/user";
+
 class _UserClient {
   private async sendRequest<T>(request: Promise<AxiosResponse<T>>) {
     try {
@@ -30,23 +32,25 @@ class _UserClient {
   }
 
   async getUsers(page = 0, limit = 6) {
-    return this.sendRequest(apiClient.get(`/user?page=${page}&limit=${limit}`));
+    return this.sendRequest(
+      apiClient.get(`${USER_PATH}?page=${page}&limit=${limit}`)
+    );
   }
 
   async getUser(id: string) {
-    return this.sendRequest(apiClient.get(`/user/${id}`));
+    return this.sendRequest(apiClient.get(`${USER_PATH}/${id}`));
   }
 
   async createUser(userData: IUserData) {
-    return this.sendRequest(apiClient.post("/user/create", userData));
+    return this.sendRequest(apiClient.post(`${USER_PATH}/create`, userData));
   }
 
   async updateUser(id: string, userData: Partial<IUserData>) {
-    return this.sendRequest(apiClient.put(`/user/${id}`, userData));
+    return this.sendRequest(apiClient.put(`${USER_PATH}/${id}`, userData));
   }
 
   async deleteUser(id: string) {
-    return this.sendRequest(apiClient.delete(`/user/${id}`));
+    return this.sendRequest(apiClient.delete(`${USER_PATH}/${id}`));
   }
 }
 
