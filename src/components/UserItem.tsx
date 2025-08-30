@@ -5,7 +5,7 @@ import { Image, Pressable, Text, View } from "react-native";
 import Swipeable from "react-native-gesture-handler/ReanimatedSwipeable";
 import { Colors } from "../constants/colors";
 import { IUserData } from "../services/userService";
-import { ConfirmModal } from "./Modal";
+import { ConfirmModal } from "./ConfirmModal";
 
 interface IProps {
   user: IUserData;
