@@ -1,10 +1,10 @@
 import { MainScreen } from "@/src/components/MainScreen";
-import { Text } from "@react-navigation/elements";
+import { UsersList } from "@/src/components/UsersList";
 
 export default function HomeTab() {
   return (
-    <MainScreen title="Home">
-      <Text>HOME</Text>
+    <MainScreen>
+      <UsersList />
     </MainScreen>
   );
 }

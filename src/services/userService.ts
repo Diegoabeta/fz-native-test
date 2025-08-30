@@ -31,7 +31,7 @@ class _UserClient {
     }
   }
 
-  async getUsers(page = 0, limit = 6) {
+  async getUsers(page = 0, limit = 20) {
     return this.sendRequest(
       apiClient.get(`${USER_PATH}?page=${page}&limit=${limit}`)
     );
