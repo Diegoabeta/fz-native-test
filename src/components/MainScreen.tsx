@@ -1,37 +1,26 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { useRouter } from "expo-router";
-import { Pressable, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import {
   SafeAreaView,
   SafeAreaViewProps,
 } from "react-native-safe-area-context";
-import { Colors } from "../constants/colors";
 
 interface IProps extends SafeAreaViewProps {
-  title?: string;
-  backButton?: boolean;
+  backgroundColor?: string;
 }
 
 export const MainScreen: React.FC<IProps> = ({
   children,
-  title,
-  backButton,
+  backgroundColor = "bg-off-white",
   ...rest
 }) => {
-  const router = useRouter();
   return (
-    <SafeAreaView className="bg-off-white flex-1 px-4 pt-6" {...rest}>
-      <View
-        className={`flex-row items-center  ${!backButton ? "justify-center" : "gap-6"}`}
-      >
-        {backButton && (
-          <Pressable onPress={router.back}>
-            <Ionicons name="arrow-back" size={24} color={Colors.grey1} />
-          </Pressable>
-        )}
-        {title && <Text>{title}</Text>}
+    <SafeAreaView edges={["top"]} className="bg-white flex-1" {...rest}>
+      <View className="bg-white w-full pt-6 pb-3 px-4 border-b border-primary">
+        <Text className="text-primary text-left font-black text-6xl">
+          Finanzauto
+        </Text>
       </View>
-      {children}
+      <View className={`flex-1 px-4 ${backgroundColor}`}>{children}</View>
     </SafeAreaView>
   );
 };
