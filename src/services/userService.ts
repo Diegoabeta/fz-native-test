@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+import { formatDate } from "../uitls/formatting";
 import { apiClient } from "./apiClient";
 
 export type Title = "mr" | "ms" | "mrs" | "miss" | "dr" | "";
@@ -38,7 +39,18 @@ class _UserClient {
   }
 
   async getUser(id: string) {
-    return this.sendRequest(apiClient.get(`${USER_PATH}/${id}`));
+    const result = await this.sendRequest<IUserData>(
+      apiClient.get(`${USER_PATH}/${id}`)
+    );
+
+    if (result.data) {
+      result.data = {
+        ...result.data,
+        dateOfBirth: formatDate(result.data.dateOfBirth),
+      };
+    }
+
+    return result;
   }
 
   async createUser(userData: IUserData) {

@@ -1,18 +1,19 @@
 import { Feather } from "@expo/vector-icons";
-import { Pressable, Text } from "react-native";
+import { Pressable, PressableProps, Text } from "react-native";
 import { Colors } from "../constants/colors";
 
-interface IProps {
+interface IProps extends PressableProps {
   type: "confirm" | "cancel";
   label: string;
   onPress: () => void;
 }
 
-export const Button: React.FC<IProps> = ({ type, label, onPress }) => {
+export const Button: React.FC<IProps> = ({ type, label, onPress, ...rest }) => {
   const isConfirm = type === "confirm";
 
   return (
     <Pressable
+      {...rest}
       onPress={onPress}
       className={`flex-row items-center justify-center px-6 py-3 rounded-2xl active:opacity-50 ${
         isConfirm ? "bg-light-green" : "border border-grey-3"
