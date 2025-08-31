@@ -1,4 +1,18 @@
-# Welcome to your Expo app 👋
+# Proyecto CRUD de Usuarios
+
+Este repositorio contiene una aplicación de ejemplo para la gestión de usuarios (CRUD) construida con **Expo**, incluyendo la integración de formularios, validaciones, y manejo de estado con un contexto de usuarios.
+
+---
+
+## Características
+
+- **Crear, leer, actualizar y eliminar usuarios**.
+- Formularios con validación de campos (nombre, correo, teléfono, fecha de nacimiento, género, etc.).
+- Soporte para **modo de edición** y **creación de usuarios**.
+- Uso de **React Hook Form** para manejar formularios.
+- Botones dinámicos para asegurar campos completos.
+
+---
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
