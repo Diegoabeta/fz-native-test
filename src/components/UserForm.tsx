@@ -95,17 +95,6 @@ const userFields: IUserField[] = [
   },
 ];
 
-const defaultValues: IUserData = {
-  id: "",
-  title: "",
-  firstName: "",
-  lastName: "",
-  gender: "",
-  email: "",
-  dateOfBirth: "",
-  phone: "",
-};
-
 interface IProps {
   defaultValues: IUserData;
   editable: boolean;

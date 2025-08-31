@@ -3,7 +3,7 @@ import { Text } from "@react-navigation/elements";
 
 export default function NotificationsTab() {
   return (
-    <MainScreen title="Notif">
+    <MainScreen>
       <Text>NOTIF</Text>
     </MainScreen>
   );

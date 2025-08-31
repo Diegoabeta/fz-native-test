@@ -3,7 +3,7 @@ import { Text } from "@react-navigation/elements";
 
 export default function SearchTab() {
   return (
-    <MainScreen title="Search">
+    <MainScreen>
       <Text>SEARCH</Text>
     </MainScreen>
   );

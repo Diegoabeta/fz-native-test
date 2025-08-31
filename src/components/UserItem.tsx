@@ -1,5 +1,6 @@
 import { Feather } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useRouter } from "expo-router";
 import React, { memo, useState } from "react";
 import { Image, Pressable, Text, View } from "react-native";
 import Swipeable from "react-native-gesture-handler/ReanimatedSwipeable";
@@ -14,6 +15,7 @@ interface IProps {
 
 const BaseUserItem: React.FC<IProps> = ({ user, onDelete }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const router = useRouter();
   const fullName = user.firstName + " " + user.lastName;
 
   const renderRightActions = () => (
@@ -68,9 +70,11 @@ const BaseUserItem: React.FC<IProps> = ({ user, onDelete }) => {
         </View>
         <Pressable
           className="absolute bottom-2 right-3 flex-row gap-4 active:opacity-60"
-          onPress={
-            () => console.log("to user details")
-            // to do add navigation
+          onPress={() =>
+            router.push({
+              pathname: "/user/[id]",
+              params: { id: user.id },
+            })
           }
         >
           <Text className="text-primary font-semibold">Ver detalle</Text>
